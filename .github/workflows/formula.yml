@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
       - run: brew style --formula Formula/treeman.rb
       - run: brew audit --strict --formula Formula/treeman.rb
 
@@ -24,6 +26,8 @@ jobs:
           - ubuntu-latest
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
       - run: brew update
       - run: brew install shoutcape/tap/treeman
       - run: brew test shoutcape/tap/treeman
