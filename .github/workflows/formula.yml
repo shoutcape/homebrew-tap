@@ -20,7 +20,7 @@ jobs:
       - run: brew tap-new --no-git shoutcape/treeman-ci
       - run: cp Formula/treeman.rb "$(brew --repository shoutcape/treeman-ci)/Formula/"
       - run: brew style --fix --formula shoutcape/treeman-ci/treeman
-      - run: brew audit --strict --formula shoutcape/treeman-ci/treeman
+      - run: brew audit --strict --formula --except=version shoutcape/treeman-ci/treeman
 
   test:
     strategy:

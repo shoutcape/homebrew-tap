@@ -47,6 +47,6 @@ class Treeman < Formula
   end
 
   test do
-    system "#{bin}/treeman", "version"
+    system bin/"treeman", "version"
   end
 end
