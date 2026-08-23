@@ -19,7 +19,7 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
       - run: brew tap-new --no-git shoutcape/treeman-ci
       - run: cp Formula/treeman.rb "$(brew --repository shoutcape/treeman-ci)/Formula/"
-      - run: brew style --formula shoutcape/treeman-ci/treeman
+      - run: brew style --fix --formula shoutcape/treeman-ci/treeman
       - run: brew audit --strict --formula shoutcape/treeman-ci/treeman
 
   test:
