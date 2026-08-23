@@ -1,0 +1,30 @@
+name: Formula
+
+on:
+  push:
+    paths:
+      - Formula/**/*.rb
+  pull_request:
+    paths:
+      - Formula/**/*.rb
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: brew style --formula Formula/treeman.rb
+      - run: brew audit --strict --formula Formula/treeman.rb
+
+  test:
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: brew update
+      - run: brew install shoutcape/tap/treeman
+      - run: brew test shoutcape/tap/treeman
+      - run: treeman version
