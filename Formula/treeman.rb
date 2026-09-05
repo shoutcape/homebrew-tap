@@ -5,23 +5,23 @@
 class Treeman < Formula
   desc "Git worktree management CLI"
   homepage "https://github.com/shoutcape/TreeMan"
-  version "0.3.57"
+  version "0.3.58"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/shoutcape/TreeMan/releases/download/v0.3.57/treeman_darwin_amd64.tar.gz"
-      sha256 "c568aace3a7d9f64e6333cd78cda6170cd8168ad527e0189683051db67380b35"
+      url "https://github.com/shoutcape/TreeMan/releases/download/v0.3.58/treeman_darwin_amd64.tar.gz"
+      sha256 "0789f6045daafcd04251506aeffd0a529095ec89c4a4484e64e944334a0aeb7a"
 
       def install
         bin.install "treeman"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/shoutcape/TreeMan/releases/download/v0.3.57/treeman_darwin_arm64.tar.gz"
-      sha256 "1f28309699bc824a983c2d9740faebc7dcd4515de6fb2d06c158d25559e6415c"
+      url "https://github.com/shoutcape/TreeMan/releases/download/v0.3.58/treeman_darwin_arm64.tar.gz"
+      sha256 "2108f714133a494ccfe3651139230f25ebf1aeeed689c268b31eef04591b84d3"
 
       def install
         bin.install "treeman"
@@ -31,15 +31,15 @@ class Treeman < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/shoutcape/TreeMan/releases/download/v0.3.57/treeman_linux_amd64.tar.gz"
-      sha256 "116beb88e7038860cc3f85997a3858820677218fae92a662b4fa149f924fd49e"
+      url "https://github.com/shoutcape/TreeMan/releases/download/v0.3.58/treeman_linux_amd64.tar.gz"
+      sha256 "49f06c6d90b58b69137c1232ba082f631dc7e9e6dc47d337042abacf2e2670ec"
       def install
         bin.install "treeman"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/shoutcape/TreeMan/releases/download/v0.3.57/treeman_linux_arm64.tar.gz"
-      sha256 "237d7eb906f1392701cd1ef5217f7083f7e1b451283ee75a67ee99cc3fc2a8bc"
+      url "https://github.com/shoutcape/TreeMan/releases/download/v0.3.58/treeman_linux_arm64.tar.gz"
+      sha256 "7ada4f93cee296a0368b8f263e54af11bd611b92f1237d2ca5e80507e83f81ad"
       def install
         bin.install "treeman"
       end
